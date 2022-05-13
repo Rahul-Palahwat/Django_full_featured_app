@@ -31,7 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    # for blog 
     'blog.apps.BlogConfig',
+
+        # for users
+    'users.apps.UsersConfig',
+
+    # this is a django package installed by terminal to decorate forms 
+    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,6 +128,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ 
+CRISPY_TEMPLATE_PACK='bootstrap4'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

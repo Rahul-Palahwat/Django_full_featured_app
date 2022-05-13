@@ -82,3 +82,11 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+
+
+
+  .spacewali{
+    display: flex;
+    justify-content: space-evenly;
+  }
