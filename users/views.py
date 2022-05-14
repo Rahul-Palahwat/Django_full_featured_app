@@ -23,7 +23,9 @@ from django.contrib import messages
 
 
 # here we are importing the inherited form 
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+
+
 
 
 
@@ -56,4 +58,23 @@ def register(request):
 # this is a decorator to restrict page 
 @login_required
 def profile(request):
-    return render(request,'users/profile.html')
+    # for handling the post request 
+    if request.method=='POST':
+        u_form=UserUpdateForm(request.POST,instance=request.user)
+        p_form=ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            # here we are using f string 
+            messages.success(request,f'Your account has been updated!')
+
+            # now we will redirect the user to another page 
+            return redirect('profile')
+    else:
+        u_form=UserUpdateForm(instance=request.user)
+        p_form=ProfileUpdateForm(instance=request.user.profile)
+    context={
+        'u_form':u_form,
+        'p_form':p_form
+    }
+    return render(request,'users/profile.html',context)

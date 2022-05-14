@@ -13,5 +13,23 @@
       </div>
     </div>
     <!-- FORM HERE -->
+    <form method="POST" enctype="multipart/form-data">
+        <!-- need to add csrf token this will protect our form from certian attack and will provide security  -->
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            <!-- {{ form}} -->
+            <!-- this will render our form in paragraph  -->
+            <!-- {{ form.as_p}} -->
+
+            <!-- here we are using crispy filter  -->
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Update</button>
+
+        </div>
+    </form>
   </div>
 {% endblock content %}
