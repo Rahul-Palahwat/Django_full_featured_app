@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -128,6 +128,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# to distinguish between the images so that we can locate and ssow the profile pictures 
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL='/media/'
 
  
 CRISPY_TEMPLATE_PACK='bootstrap4'

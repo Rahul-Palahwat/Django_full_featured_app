@@ -35,4 +35,5 @@ if __name__ == '__main__':
 # source py_env/bin/activate
 # pip install django 
 # pip install django-crispy-forms
+#pip install pillow   -->this is for images
 # python3 manage.py runserver
