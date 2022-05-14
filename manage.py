@@ -28,3 +28,11 @@ if __name__ == '__main__':
 
 # admin login details 
 # rahulkumar--> Rahul@12345 , 20bec081--> Rahul@12345 
+
+
+# to start cd django_project
+# virtualenv py_env --python=python3 
+# source py_env/bin/activate
+# pip install django 
+# pip install django-crispy-forms
+# python3 manage.py runserver

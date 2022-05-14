@@ -132,6 +132,14 @@ STATIC_URL = '/static/'
  
 CRISPY_TEMPLATE_PACK='bootstrap4'
 
+# setting to redirect after login 
+LOGIN_REDIRECT_URL="blog-home"
+
+
+
+# setting loginurl to redirect when accessing resrtictrd pages 
+LOGIN_URL='login'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

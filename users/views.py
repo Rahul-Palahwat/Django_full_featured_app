@@ -1,6 +1,13 @@
 from django.shortcuts import render,redirect
 
 
+
+# to restrict the page to loged in users only 
+from django.contrib.auth.decorators import login_required
+
+
+
+
 # # for form validations
 # from django.contrib.auth.forms import UserCreationForm
 
@@ -34,13 +41,19 @@ def register(request):
 
             username=form.cleaned_data.get('username')
             # here we are using f string 
-            messages.success(request,f'Account created for {username}!')
+            messages.success(request,f'Your account has been created! You are now able to login {username}!')
 
             # now we will redirect the user to another page 
-            return redirect('blog-home')
+            return redirect('login')
 
     else:
         form=UserRegisterForm()
     return render(request,'users/register.html',{
         'form':form
     })
+
+
+# this is a decorator to restrict page 
+@login_required
+def profile(request):
+    return render(request,'users/profile.html')
