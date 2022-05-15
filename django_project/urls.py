@@ -46,6 +46,6 @@ urlpatterns = [
 
 ]
 
-# adding debug mode 
+# adding debug mode so that it will work fine with urls
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
