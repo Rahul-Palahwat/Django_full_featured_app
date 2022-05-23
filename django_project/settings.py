@@ -127,7 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+# for heroku 
+STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
+
+
 STATIC_URL = '/static/'
+
 
 
 # to distinguish between the images so that we can locate and ssow the profile pictures 
